@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    vector<pair<int,int>> v = {{2,1},{1,2},{2,3},{1,4},{2,5}};
+    auto a = v; // for sort
+    auto b = v; // for stable_sort
+    sort(a.begin(), a.end(), [](auto &x, auto &y){ return x.first < y.first; });
+    stable_sort(b.begin(), b.end(), [](auto &x, auto &y){ return x.first < y.first; });
+
+    cout << "sort:\n";
+    for(auto &p:a) cout<<p.first<<','<<p.second<<' ';
+    cout<<"\nstable_sort:\n";
+    for(auto &p:b) cout<<p.first<<','<<p.second<<' ';
+    cout<<"\n";
+    return 0;
+}
+
